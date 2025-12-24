@@ -6,7 +6,7 @@ class LeafNode(HTMLNode):
 
     def to_html(self):
         if not self.value:
-            raise ValueError("Invalid HTML: No value in leaf node")
+            raise ValueError("Invalid HTML: Missing value in leaf node")
         if self.tag and self.properties:
             return f"<{self.tag}{self.properties_to_html()}>{self.value}</{self.tag}>"
         if self.tag:
