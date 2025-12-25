@@ -119,16 +119,16 @@ def split_nodes_link(old_nodes):
     return new_nodes
 
 def text_to_textnodes(text):
-    print(f"text: {text}\n")
+    # print(f"text: {text}\n")
     text_node = TextNode(text, TextType.TEXT) 
     new_nodes = split_nodes_image([text_node])
-    print(f"after image split: {new_nodes}\n")
+    # print(f"after image split: {new_nodes}\n")
     new_nodes = split_nodes_link(new_nodes)
-    print(f"after link split: {new_nodes}\n")
+    # print(f"after link split: {new_nodes}\n")
     new_nodes = split_nodes_delimiter(new_nodes, "`", TextType.CODE)
-    print(f"after code split: {new_nodes}\n")
+    # print(f"after code split: {new_nodes}\n")
     new_nodes = split_nodes_delimiter(new_nodes, "**", TextType.BOLD)
-    print(f"after bold split: {new_nodes}\n")
+    # print(f"after bold split: {new_nodes}\n")
     new_nodes = split_nodes_delimiter(new_nodes, "_", TextType.ITALIC)
-    print(f"after italic split: {new_nodes}\n")
+    # print(f"after italic split: {new_nodes}\n")
     return new_nodes
